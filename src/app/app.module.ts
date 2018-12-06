@@ -10,6 +10,7 @@ import { CompanyCreateComponent } from './company/routed/company-create/company-
 import { CompanyListComponent } from './company/routed/company-list/company-list.component';
 import { CompanyEditComponent } from './company/routed/company-edit/company-edit.component';
 import { UserConnexionComponent } from './user/routed/user-connexion/user-connexion.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UserConnexionComponent } from './user/routed/user-connexion/user-connex
     CompanyCreateComponent,
     CompanyListComponent,
     CompanyEditComponent,
-    UserConnexionComponent
+    UserConnexionComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
