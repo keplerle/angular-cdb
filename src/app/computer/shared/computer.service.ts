@@ -12,12 +12,12 @@ export class ComputerService {
 
   constructor(private _httpClient: HttpClient) { }
 
-  getAllComputers(): Observable<Computer[]> {
-    return this._httpClient.get<Computer[]>(`${this.SERVER_URL}/all`);
+  getAllComputersByPage(pageNb: number, pageSize: number): Observable<Computer[]> {
+    return this._httpClient.get<Computer[]>(`${this.SERVER_URL}/all?page=${pageNb}&size=${pageSize}`);
   }
 
-  getAllComputersByName(name: string): Observable<Computer[]> {
-    return this._httpClient.get<Computer[]>(`${this.SERVER_URL}/all/${name}`);
+  getAllComputersByNameByPage(name: string, pageNb: number, pageSize: number): Observable<Computer[]> {
+    return this._httpClient.get<Computer[]>(`${this.SERVER_URL}/all/${name}?page=${pageNb}&size=${pageSize}`);
   }
 
   getCountComputers(): Observable<number> {
