@@ -27,11 +27,17 @@ export class CompanyListComponent implements OnInit {
     this.displayedColumns = ['name','select'];
     this.deleteFlag = false;
     iconRegistry.addSvgIcon(
-      'trash',
+      'delete',
       sanitizer.bypassSecurityTrustResourceUrl('assets/baseline-delete-24px.svg'));
       iconRegistry.addSvgIcon(
         'add',
         sanitizer.bypassSecurityTrustResourceUrl('assets/baseline-add_circle-24px.svg'));
+        iconRegistry.addSvgIcon(
+          'edit',
+          sanitizer.bypassSecurityTrustResourceUrl('assets/baseline-edit-24px.svg'));
+          iconRegistry.addSvgIcon(
+            'delete-forever',
+            sanitizer.bypassSecurityTrustResourceUrl('assets/baseline-delete_forever-24px.svg'));
      }
    
   
@@ -100,10 +106,11 @@ export class CompanyListComponent implements OnInit {
     });
 }
 
-deleteCompanies(companiesId: number) {
-  this._companyService.deleteCompanyById(companiesId).subscribe(response => {
+deleteCompanies() {
+  console.log(this.selection)
+ /* this._companyService.deleteCompanyById(companiesId).subscribe(response => {
     this.getAllCompanies();
-  });
+  });*/
 }
 
 }
