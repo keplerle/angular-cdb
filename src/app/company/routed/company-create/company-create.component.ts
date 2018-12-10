@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { Component, OnInit, Inject } from '@angular/core';
+import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { Company } from 'src/app/shared/model/company.model';
 
 export interface DialogData {
-  animal: string;
-  name: string;
+  company: Company;
 }
 @Component({
   selector: 'app-company-create',
@@ -13,10 +13,11 @@ export interface DialogData {
 export class CompanyCreateComponent implements OnInit {
 
   constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+    public dialogRef: MatDialogRef<CompanyCreateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
     ngOnInit() {
     }
+
   onNoClick(): void {
     this.dialogRef.close();
   }

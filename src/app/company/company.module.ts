@@ -19,6 +19,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CustomMaterialModule,
     FormsModule,
     ReactiveFormsModule
+  ],
+  entryComponents: [
+    CompanyCreateComponent,
+    CompanyEditComponent
   ]
 })
 export class CompanyModule { }

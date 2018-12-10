@@ -1,3 +1,13 @@
-<p>
-  company-edit works!
-</p>
+<div class="dialog-box">
+    <h1 mat-dialog-title>Edit company</h1>
+    <div mat-dialog-content>
+      <p>Company Name</p>
+      <mat-form-field>
+        <input matInput [(ngModel)]="updatedCompany.name">
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">Cancel</button>
+      <button mat-button [mat-dialog-close]="updatedCompany" cdkFocusInitial>OK</button>
+    </div>
+</div>
