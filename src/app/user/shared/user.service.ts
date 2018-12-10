@@ -8,8 +8,8 @@ import { User } from 'src/app/shared/model/user.model';
 })
 export class UserService {
 
-  private SERVER_URL = 'http://10.0.1.148:8080/computer-database/api/user';
-
+  private SERVER_URL_IP = 'http://10.0.1.148:8080/computer-database/api/user';
+  private SERVER_URL = 'http://localhost:8080/computer-database/api/user';
   constructor(private _httpClient: HttpClient) { }
 
   getUser(id: number): Observable<User> {

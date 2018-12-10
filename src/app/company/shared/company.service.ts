@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Company } from 'src/app/shared/model/company.model';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CompanyService {
-  private SERVER_URL = 'http://10.0.1.148:8080/computer-database/api/company';
 
-  constructor(private _httpClient: HttpClient) { }
+
+export class CompanyService {
+
+  private SERVER_URL_IP = 'http://10.0.1.148:8080/computer-database/api/company';
+  private SERVER_URL = 'http://localhost:8080/computer-database/api/company';
+  constructor(private _httpClient: HttpClient) {
+   }
 
   getAllCompanies(): Observable<Company[]> {
     return this._httpClient.get<Company[]>(`${this.SERVER_URL}/all`);
