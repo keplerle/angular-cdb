@@ -4,7 +4,7 @@ import { CompanyService } from '../../shared/company.service';
 import { CompanyCreateComponent } from '../company-create/company-create.component';
 import { MatDialog } from '@angular/material';
 import { CompanyEditComponent } from '../company-edit/company-edit.component';
-
+import {SelectionModel} from '@angular/cdk/collections';
 export interface PeriodicElement {
   name: string;
 }
@@ -16,15 +16,34 @@ export interface PeriodicElement {
 export class CompanyListComponent implements OnInit {
   displayedColumns: string[];
   dataSource: Company[];
+  deleteFlag: boolean;
+  selection = new SelectionModel<PeriodicElement>(true, []);
 
   company: Company = new Company();
   constructor(private _companyService: CompanyService, public dialog: MatDialog) {
     this.displayedColumns = ['name'];
+    this.deleteFlag = false;
+
    }
 
   ngOnInit() {
    this.getAllCompanies();
   }
+
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.length;
+    return numSelected === numRows;
+  }
+
+  /** Selects all rows if they are not all selected; otherwise clear selection. */
+  masterToggle() {
+    this.isAllSelected() ?
+        this.selection.clear() :
+        this.dataSource.forEach(row => this.selection.select(row));
+  }
+
+
 
   createDialog(): void {
     const dialogRef = this.dialog.open(CompanyCreateComponent, {
@@ -42,7 +61,6 @@ export class CompanyListComponent implements OnInit {
       });
 
       dialogRef.afterClosed().subscribe(result => {
-        console.log(result);
         this.updateCompany(result);
       });
   }
