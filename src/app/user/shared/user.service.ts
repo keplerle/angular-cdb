@@ -12,23 +12,7 @@ export class UserService {
 
   constructor(private _httpClient: HttpClient) { }
 
-  getAllCompanies(): Observable<User[]> {
-    return this._httpClient.get<User[]>(`${this.SERVER_URL}/all`);
-  }
-
-  getCompanyById(id: number): Observable<User> {
-    return this._httpClient.get<User>(`${this.SERVER_URL}/${id}`);
-  }
-
-  addCompany(company: User): Observable<User> {
-    return this._httpClient.post<User>(this.SERVER_URL, company);
-  }
-
-  deleteCompanyById(id: number): Observable<User> {
-    return this._httpClient.delete<User>(`${this.SERVER_URL}/${id}`);
-  }
-
-  updateCompany(company: User): Observable<User> {
-    return this._httpClient.put<User>(this.SERVER_URL, company);
+  getUser(id: number): Observable<User> {
+    return null;
   }
 }
