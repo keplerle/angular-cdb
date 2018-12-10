@@ -5,6 +5,9 @@ import { CompanyCreateComponent } from '../company-create/company-create.compone
 import { MatDialog } from '@angular/material';
 import { CompanyEditComponent } from '../company-edit/company-edit.component';
 import {SelectionModel} from '@angular/cdk/collections';
+import {DomSanitizer} from '@angular/platform-browser';
+import {MatIconRegistry} from '@angular/material';
+
 export interface PeriodicElement {
   name: string;
 }
@@ -20,16 +23,30 @@ export class CompanyListComponent implements OnInit {
   selection = new SelectionModel<PeriodicElement>(true, []);
 
   company: Company = new Company();
-  constructor(private _companyService: CompanyService, public dialog: MatDialog) {
-    this.displayedColumns = ['name'];
+  constructor(private _companyService: CompanyService, public dialog: MatDialog, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    this.displayedColumns = ['name','select'];
     this.deleteFlag = false;
-
-   }
-
+    iconRegistry.addSvgIcon(
+      'trash',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/baseline-delete-24px.svg'));
+      iconRegistry.addSvgIcon(
+        'add',
+        sanitizer.bypassSecurityTrustResourceUrl('assets/baseline-add_circle-24px.svg'));
+     }
+   
+  
   ngOnInit() {
-   this.getAllCompanies();
+  // this.getAllCompanies();
+  
+  this.dataSource =[
+    {id: 1, name: 'Hydrogen'},
+    {id: 2, name: 'Helium'},
+    {id: 3, name: 'Lithium'},
+    {id: 4, name: 'Beryllium'},
+    {id: 5, name: 'Boron'},
+    {id: 6, name: 'Carbon'}
+  ];
   }
-
   isAllSelected() {
     const numSelected = this.selection.selected.length;
     const numRows = this.dataSource.length;
@@ -81,6 +98,12 @@ export class CompanyListComponent implements OnInit {
     this._companyService.updateCompany(updateCompany).subscribe(response => {
       this.getAllCompanies();
     });
+}
+
+deleteCompanies(companiesId: number) {
+  this._companyService.deleteCompanyById(companiesId).subscribe(response => {
+    this.getAllCompanies();
+  });
 }
 
 }
