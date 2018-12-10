@@ -6,6 +6,7 @@ import { ComputerListComponent } from './routed/computer-list/computer-list.comp
 import { RouterModule } from '@angular/router';
 import { CustomMaterialModule } from '../custom-material/custom-material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     CustomMaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatPaginatorModule
   ]
 })
 export class ComputerModule { }
