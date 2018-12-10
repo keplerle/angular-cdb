@@ -10,8 +10,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class CompanyService {
 
-  private SERVER_URL_IP = 'http://10.0.1.148:8080/computer-database/api/company';
-  private SERVER_URL = 'http://localhost:8080/computer-database/api/company';
+  private SERVER_URL = 'http://10.0.1.148:8080/computer-database/api/company';
+  private SERVER_URL_IP = 'http://localhost:8080/computer-database/api/company';
   constructor(private _httpClient: HttpClient) {
    }
 

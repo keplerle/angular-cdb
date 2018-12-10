@@ -8,8 +8,8 @@ import { Computer } from 'src/app/shared/model/computer.model';
 })
 export class ComputerService {
 
-  private SERVER_URL_IP = 'http://10.0.1.148:8080/computer-database/api/computer';
-  private SERVER_URL = 'http://localhost/computer-database/api/computer';
+  private SERVER_URL = 'http://10.0.1.148:8080/computer-database/api/computer';
+  private SERVER_URL_IP = 'http://localhost/computer-database/api/computer';
   constructor(private _httpClient: HttpClient) { }
 
   getAllComputersByPage(pageNb: number, pageSize: number): Observable<Computer[]> {
