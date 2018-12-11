@@ -13,3 +13,14 @@ table {
   display: flex;
   justify-content: center;
  }
+ .custom-cell-name{
+  width: 88%
+  }
+
+  .custom-cell-select{
+    width: 12%
+  }
+
+  .mat-column-select {
+    overflow: initial;
+  }

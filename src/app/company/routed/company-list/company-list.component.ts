@@ -8,10 +8,7 @@ import {SelectionModel} from '@angular/cdk/collections';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
 import {MatSnackBar} from '@angular/material';
-export interface PeriodicElement {
-  id: number ;
-  name: string ;
-}
+
 @Component({
   selector: 'app-company-list',
   templateUrl: './company-list.component.html',
@@ -21,7 +18,7 @@ export class CompanyListComponent implements OnInit {
   displayedColumns: string[];
   dataSource: Company[];
   deleteFlag: boolean;
-  selection = new SelectionModel<PeriodicElement>(true, []);
+  selection = new SelectionModel<Company>(true, []);
   arrayIds: string[];
   company: Company = new Company();
   constructor( public snackBar: MatSnackBar,

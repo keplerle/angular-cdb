@@ -8,6 +8,8 @@ import { ComputerCreateComponent } from '../computer-create/computer-create.comp
 import { ComputerEditComponent } from '../computer-edit/computer-edit.component';
 import { DatePipe } from '@angular/common';
 import {MatSnackBar} from '@angular/material';
+import { SelectionModel } from '@angular/cdk/collections';
+
 @Component({
   selector: 'app-computer-list',
   templateUrl: './computer-list.component.html',
@@ -24,6 +26,8 @@ export class ComputerListComponent implements OnInit {
   length = 10;
   pageIndex = 0;
   pageSize = 10;
+  arrayIds: string[];
+  selection = new SelectionModel<Computer>(true, []);
 
   computer: Computer;
   constructor(
@@ -33,7 +37,7 @@ export class ComputerListComponent implements OnInit {
       public dialog: MatDialog,
        iconRegistry: MatIconRegistry,
         sanitizer: DomSanitizer) {
-    this.displayedColumns = ['name', 'introduced', 'discontinued', 'company'];
+    this.displayedColumns = ['name', 'introduced', 'discontinued', 'company', 'select'];
     this.deleteFlag = false;
     iconRegistry.addSvgIcon(
       'delete',
@@ -51,6 +55,17 @@ export class ComputerListComponent implements OnInit {
 
   ngOnInit() {
     this.getPageNoSearch(this.pageIndex + 1, this.pageSize);
+  }
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.length;
+    return numSelected === numRows;
+  }
+
+  masterToggle() {
+    this.isAllSelected() ?
+        this.selection.clear() :
+        this.dataSource.forEach(row => this.selection.select(row));
   }
 
   public getPage(event?: PageEvent) {
@@ -155,6 +170,7 @@ public refresh() {
   addComputer(newComputer: Computer) {
     this._computerService.addComputer(newComputer).subscribe(response => {
       this.refresh();
+<<<<<<< HEAD
       this.openSnackBar('Successfully deleted computers !', 'ADD');
     });
   }
@@ -162,6 +178,20 @@ public refresh() {
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
       duration: 2000,
+=======
+    });
+  }
+
+  deleteComputers() {
+    this.arrayIds = [];
+    this.selection.selected.forEach(element => {
+    this.arrayIds.push('' + element.id);
+    });
+    this._computerService.deleteComputers(this.arrayIds).subscribe(response => {
+      this.refresh();
+      this.selection.clear();
+      this.deleteFlag = false;
+>>>>>>> dev
     });
   }
 

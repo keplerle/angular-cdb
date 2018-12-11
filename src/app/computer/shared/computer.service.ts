@@ -36,8 +36,8 @@ export class ComputerService {
     return this._httpClient.post<Computer>(this.SERVER_URL, company);
   }
 
-  deleteComputerById(id: number): Observable<Computer> {
-    return this._httpClient.delete<Computer>(`${this.SERVER_URL}/${id}`);
+  deleteComputers(tabId: string[]): Observable<Computer> {
+    return this._httpClient.delete<Computer>(`${this.SERVER_URL}?idTab=${tabId}`);
   }
 
   updateComputer(company: Computer): Observable<Computer> {
