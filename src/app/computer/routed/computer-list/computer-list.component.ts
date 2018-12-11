@@ -27,7 +27,6 @@ export class ComputerListComponent implements OnInit {
   ngOnInit() {
     this._computerService.getAllComputersByPage(this.pageIndex + 1, this.pageSize).subscribe(response => {
       this.dataSource = response;
-      console.log(this.dataSource);
     });
     this._computerService.getCountComputers().subscribe(response => {
       this.length = response;
@@ -43,23 +42,6 @@ export class ComputerListComponent implements OnInit {
     this._computerService.getCountComputers().subscribe(response => {
       this.length = response;
     });
-
-
-    /*this.fooService.getdata(event).subscribe(
-      response =>{
-        if(response.error) {
-          // handle error
-        } else {
-          this.datasource = response.data;
-          this.pageIndex = response.pageIndex;
-          this.pageSize = response.pageSize;
-          this.length = response.length;
-        }
-      },
-      error =>{
-        // handle error
-      }
-    );*/
     return event;
   }
 }
