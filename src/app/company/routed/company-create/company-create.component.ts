@@ -1,11 +1,12 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { Company } from 'src/app/shared/model/company.model';
-
+import { DialogData } from 'src/app/computer/routed/computer-create/computer-create.component';
 
 export interface DialogData {
   company: Company;
 }
+
 @Component({
   selector: 'app-company-create',
   templateUrl: './company-create.component.html',
