@@ -170,7 +170,6 @@ public refresh() {
   addComputer(newComputer: Computer) {
     this._computerService.addComputer(newComputer).subscribe(response => {
       this.refresh();
-<<<<<<< HEAD
       this.openSnackBar('Successfully deleted computers !', 'ADD');
     });
   }
@@ -178,20 +177,20 @@ public refresh() {
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
       duration: 2000,
-=======
+
     });
   }
 
   deleteComputers() {
     this.arrayIds = [];
     this.selection.selected.forEach(element => {
-    this.arrayIds.push('' + element.id);
+    this.arrayIds.push(element.id.toString());
     });
     this._computerService.deleteComputers(this.arrayIds).subscribe(response => {
       this.refresh();
       this.selection.clear();
       this.deleteFlag = false;
->>>>>>> dev
+
     });
   }
 
