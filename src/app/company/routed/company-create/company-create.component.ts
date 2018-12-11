@@ -17,7 +17,7 @@ export class CompanyCreateComponent implements OnInit {
     public dialogRef: MatDialogRef<CompanyCreateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
     ngOnInit() {
-      console.log(this.data.company);
+
     }
 
   onNoClick(): void {

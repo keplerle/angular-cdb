@@ -1,3 +1,30 @@
-<p>
-  computer-create works!
-</p>
+<div class="dialog-box">
+  <h1 mat-dialog-title>Create company</h1>
+  <div mat-dialog-content>
+    <p>Company Name</p>
+
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="data.computer.name">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="introducedPicker" placeholder="Choose a introduced date" [(ngModel)]="data.computer.introduced">
+      <mat-datepicker-toggle matSuffix [for]="introducedPicker"></mat-datepicker-toggle>
+      <mat-datepicker #introducedPicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="discontinuedPicker" placeholder="Choose a discontinued date" [(ngModel)]="data.computer.discntinued">
+      <mat-datepicker-toggle matSuffix [for]="discontinuedPicker"></mat-datepicker-toggle>
+      <mat-datepicker #discontinuedPicker></mat-datepicker>
+    </mat-form-field>
+
+
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="data.computer" cdkFocusInitial [disabled]="data.computer.name == null || data.computer.name?.length == 0">OK</button>
+  </div>
+</div>

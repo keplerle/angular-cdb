@@ -18,9 +18,9 @@
                           [indeterminate]="selection.hasValue() && !isAllSelected()"
                           *ngIf="deleteFlag">
             </mat-checkbox>
-            <button mat-raised-button (click)="deleteCompanies()" matTooltip="Confirm deletion" class="custom-button" color="accent" *ngIf="deleteFlag">
-              <mat-icon svgIcon="delete-forever"></mat-icon>
-            </button>
+              <button mat-raised-button (click)="deleteCompanies()" matTooltip="Confirm deletion" class="custom-button" color="accent" *ngIf="deleteFlag">
+                <mat-icon svgIcon="delete-forever"></mat-icon>
+              </button>
           </th>
       <td mat-cell *matCellDef="let row" class="custom-cell-select" >
         <mat-checkbox (click)="$event.stopPropagation() "
