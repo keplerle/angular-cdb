@@ -9,7 +9,8 @@ import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
 
 export interface PeriodicElement {
-  name: string;
+  id: number ;
+  name: string ;
 }
 @Component({
   selector: 'app-company-list',
@@ -21,10 +22,10 @@ export class CompanyListComponent implements OnInit {
   dataSource: Company[];
   deleteFlag: boolean;
   selection = new SelectionModel<PeriodicElement>(true, []);
-
+  arrayIds: string[];
   company: Company = new Company();
   constructor(private _companyService: CompanyService, public dialog: MatDialog, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    this.displayedColumns = ['name','select'];
+    this.displayedColumns = ['name', 'select'];
     this.deleteFlag = false;
     iconRegistry.addSvgIcon(
       'delete',
@@ -39,19 +40,8 @@ export class CompanyListComponent implements OnInit {
             'delete-forever',
             sanitizer.bypassSecurityTrustResourceUrl('assets/baseline-delete_forever-24px.svg'));
      }
-   
-  
   ngOnInit() {
-  // this.getAllCompanies();
-  
-  this.dataSource =[
-    {id: 1, name: 'Hydrogen'},
-    {id: 2, name: 'Helium'},
-    {id: 3, name: 'Lithium'},
-    {id: 4, name: 'Beryllium'},
-    {id: 5, name: 'Boron'},
-    {id: 6, name: 'Carbon'}
-  ];
+   this.getAllCompanies();
   }
   isAllSelected() {
     const numSelected = this.selection.selected.length;
@@ -59,7 +49,6 @@ export class CompanyListComponent implements OnInit {
     return numSelected === numRows;
   }
 
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
   masterToggle() {
     this.isAllSelected() ?
         this.selection.clear() :
@@ -74,7 +63,9 @@ export class CompanyListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.addCompany(result);
+      if (result != null) {
+        this.addCompany(result);
+      }
     });
 
   }
@@ -84,8 +75,11 @@ export class CompanyListComponent implements OnInit {
       });
 
       dialogRef.afterClosed().subscribe(result => {
-        this.updateCompany(result);
+        if (result != null) {
+          this.updateCompany(result);
+        }
       });
+
   }
 
   getAllCompanies() {
@@ -107,10 +101,15 @@ export class CompanyListComponent implements OnInit {
 }
 
 deleteCompanies() {
-  console.log(this.selection)
- /* this._companyService.deleteCompanyById(companiesId).subscribe(response => {
+  this.arrayIds = [];
+  this.selection.selected.forEach(element => {
+  this.arrayIds.push(element.id.toString());
+  });
+  this._companyService.deleteCompanies(this.arrayIds).subscribe(response => {
     this.getAllCompanies();
-  });*/
+    this.selection.clear();
+    this.deleteFlag = false;
+  });
 }
 
 }

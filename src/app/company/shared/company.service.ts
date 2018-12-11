@@ -27,8 +27,8 @@ export class CompanyService {
     return this._httpClient.post<Company>(this.SERVER_URL, company);
   }
 
-  deleteCompanyById(id: number): Observable<Company> {
-    return this._httpClient.delete<Company>(`${this.SERVER_URL}/${id}`);
+  deleteCompanies(tabId: string[]): Observable<Company> {
+    return this._httpClient.delete<Company>(`${this.SERVER_URL}?idTab=${tabId}`);
   }
 
   updateCompany(company: Company): Observable<Company> {

@@ -8,6 +8,6 @@
     </div>
     <div mat-dialog-actions>
       <button mat-button (click)="onNoClick()">Cancel</button>
-      <button mat-button [mat-dialog-close]="updatedCompany" cdkFocusInitial>OK</button>
+      <button mat-button [mat-dialog-close]="updatedCompany" cdkFocusInitial [disabled]="updatedCompany.name.length == 0">OK</button>
     </div>
 </div>
