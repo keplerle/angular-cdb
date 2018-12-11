@@ -7,7 +7,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ComputerCreateComponent } from '../computer-create/computer-create.component';
 import { ComputerEditComponent } from '../computer-edit/computer-edit.component';
 import { DatePipe } from '@angular/common';
-
+import {MatSnackBar} from '@angular/material';
 @Component({
   selector: 'app-computer-list',
   templateUrl: './computer-list.component.html',
@@ -27,6 +27,7 @@ export class ComputerListComponent implements OnInit {
 
   computer: Computer;
   constructor(
+    public snackBar: MatSnackBar,
     private datePipe: DatePipe,
      private _computerService: ComputerService,
       public dialog: MatDialog,
@@ -69,8 +70,6 @@ public refresh() {
   }
   return event;
 }
-
-
 
   private getPageNoSearch(index: number, size: number) {
     this._computerService.getAllComputersByPage(index, size).subscribe(response => {
@@ -123,8 +122,6 @@ public refresh() {
         this.computer.discontinued = this.datePipe.transform(this.computer.discontinued , 'yyyy-MM-dd');
         }
         this.updateComputer(result);
-        this.refresh();
-
       }
     });
   }
@@ -144,21 +141,27 @@ public refresh() {
         this.computer.discontinued = this.datePipe.transform(this.computer.discontinued , 'yyyy-MM-dd');
         }
         this.addComputer(this.computer);
-        this.refresh();
       }
     });
   }
 
   updateComputer(updateComputer: Computer) {
     this._computerService.updateComputer(updateComputer).subscribe(response => {
-      this.getPageNoSearch(this.pageIndex + 1, this.pageSize);
+      this.refresh();
+      this.openSnackBar('Successfully updated computer !', 'UPDATED');
     });
   }
 
   addComputer(newComputer: Computer) {
     this._computerService.addComputer(newComputer).subscribe(response => {
       this.refresh();
+      this.openSnackBar('Successfully deleted computers !', 'ADD');
+    });
+  }
 
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
     });
   }
 

@@ -7,7 +7,7 @@ import { CompanyEditComponent } from '../company-edit/company-edit.component';
 import {SelectionModel} from '@angular/cdk/collections';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
-
+import {MatSnackBar} from '@angular/material';
 export interface PeriodicElement {
   id: number ;
   name: string ;
@@ -24,7 +24,11 @@ export class CompanyListComponent implements OnInit {
   selection = new SelectionModel<PeriodicElement>(true, []);
   arrayIds: string[];
   company: Company = new Company();
-  constructor(private _companyService: CompanyService, public dialog: MatDialog, iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+  constructor( public snackBar: MatSnackBar,
+     private _companyService: CompanyService,
+      public dialog: MatDialog,
+       iconRegistry: MatIconRegistry,
+        sanitizer: DomSanitizer) {
     this.displayedColumns = ['name', 'select'];
     this.deleteFlag = false;
     iconRegistry.addSvgIcon(
@@ -91,12 +95,14 @@ export class CompanyListComponent implements OnInit {
   addCompany(newCompany: Company) {
   this._companyService.addCompany(newCompany).subscribe(response => {
     this.getAllCompanies();
+    this.openSnackBar('Successfully added companies !', 'ADD');
   });
 }
 
   updateCompany(updateCompany: Company) {
     this._companyService.updateCompany(updateCompany).subscribe(response => {
       this.getAllCompanies();
+      this.openSnackBar('Successfully updated companies !', 'UPDATE');
     });
 }
 
@@ -109,6 +115,13 @@ deleteCompanies() {
     this.getAllCompanies();
     this.selection.clear();
     this.deleteFlag = false;
+    this.openSnackBar('Successfully deleted companies !', 'DELETE');
+  });
+}
+
+openSnackBar(message: string, action: string) {
+  this.snackBar.open(message, action, {
+    duration: 2000,
   });
 }
 
