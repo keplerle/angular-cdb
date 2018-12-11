@@ -28,12 +28,7 @@ export class ComputerListComponent implements OnInit {
 
 
   ngOnInit() {
-    this._computerService.getAllComputersByPage(this.pageIndex + 1, this.pageSize).subscribe(response => {
-      this.dataSource = response;
-    });
-    this._computerService.getCountComputers().subscribe(response => {
-      this.length = response;
-    });
+    this.getPageNoSearch(this.pageIndex + 1, this.pageSize);
   }
 
   public getPage(event?: PageEvent) {
@@ -47,7 +42,7 @@ export class ComputerListComponent implements OnInit {
 
   private getPageNoSearch(index: number, size: number) {
     this._computerService.getAllComputersByPage(index, size).subscribe(response => {
-      this.pageIndex = index;
+      this.pageIndex = index - 1;
       this.pageSize = size;
       this.dataSource = response;
     });
@@ -58,7 +53,7 @@ export class ComputerListComponent implements OnInit {
 
   private getPageWithSearch(search: string, index: number, size: number) {
     this._computerService.getAllComputersByNameByPage(search, index, size).subscribe(response => {
-      this.pageIndex = index;
+      this.pageIndex = index - 1;
       this.pageSize = size;
       this.dataSource = response;
       console.log( this.dataSource );
@@ -68,7 +63,7 @@ export class ComputerListComponent implements OnInit {
     });
   }
 
-  applyFilter(filterValue: string) {
+  public applyFilter(filterValue: string) {
     if (filterValue === null || filterValue === '') {
       this.searchMode = false;
       this.pageIndex = 0;
