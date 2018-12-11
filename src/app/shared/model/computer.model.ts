@@ -2,8 +2,8 @@ import { Company } from './company.model';
 export class Computer {
   id: number;
   name: string;
-  introduced: Date;
-  discontinued: Date;
+  introduced: string;
+  discontinued: string;
   companyId: number;
   companyName: string;
 }

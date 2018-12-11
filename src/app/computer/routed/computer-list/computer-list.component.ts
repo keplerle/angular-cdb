@@ -115,6 +115,13 @@ public refresh() {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result != null) {
+        this.computer = result;
+        if (this.computer.introduced != null) {
+          this.computer.introduced = this.datePipe.transform(this.computer.introduced , 'yyyy-MM-dd');
+        }
+        if (this.computer.discontinued != null) {
+        this.computer.discontinued = this.datePipe.transform(this.computer.discontinued , 'yyyy-MM-dd');
+        }
         this.updateComputer(result);
         this.refresh();
 
@@ -129,8 +136,13 @@ public refresh() {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result != null) {
-
         this.computer = result;
+        if (this.computer.introduced != null) {
+          this.computer.introduced = this.datePipe.transform(this.computer.introduced , 'yyyy-MM-dd');
+        }
+        if (this.computer.discontinued != null) {
+        this.computer.discontinued = this.datePipe.transform(this.computer.discontinued , 'yyyy-MM-dd');
+        }
         this.addComputer(this.computer);
         this.refresh();
       }
