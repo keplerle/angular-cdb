@@ -24,7 +24,8 @@ export class ComputerEditComponent implements OnInit {
        this.updatedComputer.id = data.computer.id ;
        this.updatedComputer.discontinued = data.computer.discontinued ;
        this.updatedComputer.introduced = data.computer.introduced ;
-       this.updatedComputer.company = data.computer.company ;
+       this.updatedComputer.companyId = data.computer.companyId ;
+       this.updatedComputer.companyName = data.computer.companyName ;
     }
 
   ngOnInit() {

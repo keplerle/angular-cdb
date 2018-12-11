@@ -4,5 +4,6 @@ export class Computer {
   name: string;
   introduced: Date;
   discontinued: Date;
-  company: Company;
+  companyId: number;
+  companyName: string;
 }
