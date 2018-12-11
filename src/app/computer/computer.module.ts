@@ -21,6 +21,10 @@ import { MatPaginatorModule } from '@angular/material';
     FormsModule,
     ReactiveFormsModule,
     MatPaginatorModule
+  ],
+  entryComponents: [
+    ComputerCreateComponent,
+    ComputerEditComponent
   ]
 })
 export class ComputerModule { }

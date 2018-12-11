@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { Computer } from 'src/app/shared/model/computer.model';
+import { MAT_DIALOG_DATA, MatDialogRef, MatDialog } from '@angular/material';
+import { CompanyService } from 'src/app/company/shared/company.service';
+import { Company } from 'src/app/shared/model/company.model';
+export interface DialogData {
+  computer: Computer;
+}
 
 @Component({
   selector: 'app-computer-edit',
@@ -7,9 +14,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComputerEditComponent implements OnInit {
 
-  constructor() { }
+  updatedComputer: Computer = new Computer();
+  companies: Company[];
+  constructor(
+    public dialogRef: MatDialogRef<ComputerEditComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData
+    , private _companyService: CompanyService) {
+       this.updatedComputer.name = data.computer.name ;
+       this.updatedComputer.id = data.computer.id ;
+       this.updatedComputer.discontinued = data.computer.discontinued ;
+       this.updatedComputer.introduced = data.computer.introduced ;
+       this.updatedComputer.company = data.computer.company ;
+    }
 
   ngOnInit() {
+    this._companyService.getAllCompanies().subscribe(result => {this.companies = result; });
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

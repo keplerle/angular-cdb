@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ComputerService } from '../../shared/computer.service';
 import { Computer } from 'src/app/shared/model/computer.model';
-import { PageEvent } from '@angular/material';
+import { PageEvent, MatDialog } from '@angular/material';
+import { ComputerCreateComponent } from '../computer-create/computer-create.component';
+import { ComputerEditComponent } from '../computer-edit/computer-edit.component';
 
 @Component({
   selector: 'app-computer-list',
@@ -20,8 +22,9 @@ export class ComputerListComponent implements OnInit {
   length = 10;
   pageIndex = 0;
   pageSize = 10;
+  computer: any;
 
-  constructor(private _computerService: ComputerService) {
+  constructor(private _computerService: ComputerService, public dialog: MatDialog) {
     this.displayedColumns = ['name', 'introduced', 'discontinued', 'company'];
    }
 
@@ -33,12 +36,22 @@ export class ComputerListComponent implements OnInit {
 
   public getPage(event?: PageEvent) {
     if (this.searchMode) {
-      this.getPageWithSearch(this.searchString, this.pageIndex + 1, this.pageSize);
+      this.getPageWithSearch(this.searchString, event.pageIndex + 1, event.pageSize);
     } else {
       this.getPageNoSearch(event.pageIndex + 1, event.pageSize);
     }
     return event;
   }
+
+public refresh() {
+  if (this.searchMode) {
+    this.getPageWithSearch(this.searchString, this.pageIndex + 1, this.pageSize);
+  } else {
+    this.getPageNoSearch(this.pageIndex + 1, this.pageSize);
+  }
+  return event;
+}
+
 
   private getPageNoSearch(index: number, size: number) {
     this._computerService.getAllComputersByPage(index, size).subscribe(response => {
@@ -74,6 +87,25 @@ export class ComputerListComponent implements OnInit {
       this.pageIndex = 0;
       this.getPageWithSearch(this.searchString, this.pageIndex + 1, this.pageSize);
     }
+  }
+
+  updateDialog(computerToUpdate: Computer): void {
+    const dialogRef = this.dialog.open(ComputerEditComponent, {
+      data: {computer: computerToUpdate}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result != null) {
+        this.updateComputer(result);
+        this.refresh();
+      }
+    });
+  }
+
+  updateComputer(updateComputer: Computer) {
+    this._computerService.updateComputer(updateComputer).subscribe(response => {
+      this.getPageNoSearch(this.pageIndex + 1, this.pageSize);
+    });
   }
 
 }

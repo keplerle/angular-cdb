@@ -1,3 +1,32 @@
-<p>
-  computer-edit works!
-</p>
+<div class="dialog-box">
+    <h1 mat-dialog-title>Edit computer</h1>
+    <div mat-dialog-content>
+      <p>Computer Name</p>
+      <mat-form-field>
+        <input matInput [(ngModel)]="updatedComputer.name" type="text" >
+      </mat-form-field>
+
+      <p>Computer Introduction</p>
+      <mat-form-field>
+        <input matInput [(ngModel)]="updatedComputer.introduced" type="date" >
+      </mat-form-field>
+
+      <p>Computer Discontinuation</p>
+      <mat-form-field>
+        <input matInput [(ngModel)]="updatedComputer.discontinued" type="date" >
+      </mat-form-field>
+
+      <p>Company</p>
+      <mat-form-field>
+          <mat-select placeholder="No Company">
+            <mat-option *ngFor="let company of companies" [value]="company.name">
+              {{company.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button (click)="onNoClick()">Cancel</button>
+      <button mat-button [mat-dialog-close]="updatedComputer" cdkFocusInitial [disabled]="updatedComputer.name.length == 0">OK</button>
+    </div>
+</div>
