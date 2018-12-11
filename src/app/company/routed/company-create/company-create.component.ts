@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { Company } from 'src/app/shared/model/company.model';
 
+
 export interface DialogData {
   company: Company;
 }
