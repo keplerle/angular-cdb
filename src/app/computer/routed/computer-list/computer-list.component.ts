@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ComputerService } from '../../shared/computer.service';
 import { Computer } from 'src/app/shared/model/computer.model';
-import { PageEvent, MatDialog } from '@angular/material';
+
+import { PageEvent, MatDialog, MatIconRegistry } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ComputerCreateComponent } from '../computer-create/computer-create.component';
 import { ComputerEditComponent } from '../computer-edit/computer-edit.component';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-computer-list',
@@ -14,21 +17,36 @@ export class ComputerListComponent implements OnInit {
 
   displayedColumns: string[];
   dataSource: Computer[];
-
+  deleteFlag: boolean;
   private searchMode = false;
   private searchString: string;
-
   pageEvent: PageEvent;
   length = 10;
   pageIndex = 0;
   pageSize = 10;
-  computer: any;
 
-  constructor(private _computerService: ComputerService, public dialog: MatDialog) {
+  computer: Computer;
+  constructor(
+    private datePipe: DatePipe,
+     private _computerService: ComputerService,
+      public dialog: MatDialog,
+       iconRegistry: MatIconRegistry,
+        sanitizer: DomSanitizer) {
     this.displayedColumns = ['name', 'introduced', 'discontinued', 'company'];
+    this.deleteFlag = false;
+    iconRegistry.addSvgIcon(
+      'delete',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/baseline-delete-24px.svg'));
+      iconRegistry.addSvgIcon(
+        'add',
+        sanitizer.bypassSecurityTrustResourceUrl('assets/baseline-add_circle-24px.svg'));
+        iconRegistry.addSvgIcon(
+          'edit',
+          sanitizer.bypassSecurityTrustResourceUrl('assets/baseline-edit-24px.svg'));
+          iconRegistry.addSvgIcon(
+            'delete-forever',
+            sanitizer.bypassSecurityTrustResourceUrl('assets/baseline-delete_forever-24px.svg'));
    }
-
-
 
   ngOnInit() {
     this.getPageNoSearch(this.pageIndex + 1, this.pageSize);
@@ -53,6 +71,7 @@ public refresh() {
 }
 
 
+
   private getPageNoSearch(index: number, size: number) {
     this._computerService.getAllComputersByPage(index, size).subscribe(response => {
       this.pageIndex = index - 1;
@@ -69,7 +88,6 @@ public refresh() {
       this.pageIndex = index - 1;
       this.pageSize = size;
       this.dataSource = response;
-      console.log( this.dataSource );
     });
     this._computerService.getCountComputersByName(search).subscribe(response => {
       this.length = response;
@@ -89,6 +107,7 @@ public refresh() {
     }
   }
 
+
   updateDialog(computerToUpdate: Computer): void {
     const dialogRef = this.dialog.open(ComputerEditComponent, {
       data: {computer: computerToUpdate}
@@ -98,6 +117,22 @@ public refresh() {
       if (result != null) {
         this.updateComputer(result);
         this.refresh();
+
+      }
+    });
+  }
+
+  createDialog(): void {
+    this.computer = new Computer();
+    const dialogRef = this.dialog.open(ComputerCreateComponent, {
+      data: {computer: this.computer}
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result != null) {
+
+        this.computer = result;
+        this.addComputer(this.computer);
+        this.refresh();
       }
     });
   }
@@ -105,6 +140,13 @@ public refresh() {
   updateComputer(updateComputer: Computer) {
     this._computerService.updateComputer(updateComputer).subscribe(response => {
       this.getPageNoSearch(this.pageIndex + 1, this.pageSize);
+    });
+  }
+
+  addComputer(newComputer: Computer) {
+    this._computerService.addComputer(newComputer).subscribe(response => {
+      this.refresh();
+
     });
   }
 

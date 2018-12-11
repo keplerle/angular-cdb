@@ -10,10 +10,12 @@ import { ComputerModule } from './computer/computer.module';
 import { UserModule } from './user/user.module';
 import { CompanyModule } from './company/company.module';
 import { HttpClientModule } from '@angular/common/http';
+import {DatePipe} from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,8 +26,9 @@ import { HttpClientModule } from '@angular/common/http';
     ComputerModule,
     CompanyModule,
     UserModule
+
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

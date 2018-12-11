@@ -1,3 +1,15 @@
 table {
   width: 100%;
 }
+.create-button {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  justify-content: flex-end;
+}
+.custom-button {
+  margin-left: 30px;
+  margin-right: 30px;
+  display: flex;
+  justify-content: center;
+ }

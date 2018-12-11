@@ -1,7 +1,17 @@
 <div class="mat-elevation-z8">
-    <mat-form-field>
-      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search for Computer">
-    </mat-form-field>
+  <div>
+      <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search for Computer">
+        </mat-form-field>
+        <div class="create-button">
+            <button mat-raised-button color="primary" matTooltip="Create" (click)="createDialog()"><mat-icon svgIcon="add"></mat-icon></button>
+            <button mat-raised-button color="accent"   class="custom-button" (click)="deleteFlag=!deleteFlag">
+              <mat-icon svgIcon="delete" matTooltip="Delete Mode" *ngIf="!deleteFlag"></mat-icon>
+              <mat-icon svgIcon="edit"   matTooltip="Edit Mode" *ngIf="deleteFlag"></mat-icon>
+            </button>
+        </div>
+  </div>
+
 
   <table mat-table [dataSource]="dataSource" >
 
