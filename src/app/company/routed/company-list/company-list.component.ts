@@ -92,14 +92,14 @@ export class CompanyListComponent implements OnInit {
   addCompany(newCompany: Company) {
   this._companyService.addCompany(newCompany).subscribe(response => {
     this.getAllCompanies();
-    this.openSnackBar('Successfully added companies !', 'ADD');
+    this.openSnackBar('Successfully added company !', 'ADD');
   });
 }
 
   updateCompany(updateCompany: Company) {
     this._companyService.updateCompany(updateCompany).subscribe(response => {
       this.getAllCompanies();
-      this.openSnackBar('Successfully updated companies !', 'UPDATE');
+      this.openSnackBar('Successfully updated company !', 'UPDATE');
     });
 }
 

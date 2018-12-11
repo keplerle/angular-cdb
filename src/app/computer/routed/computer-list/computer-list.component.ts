@@ -170,7 +170,7 @@ public refresh() {
   addComputer(newComputer: Computer) {
     this._computerService.addComputer(newComputer).subscribe(response => {
       this.refresh();
-      this.openSnackBar('Successfully deleted computers !', 'ADD');
+      this.openSnackBar('Successfully added computer !', 'ADD');
     });
   }
 
@@ -190,7 +190,7 @@ public refresh() {
       this.refresh();
       this.selection.clear();
       this.deleteFlag = false;
-
+      this.openSnackBar('Successfully deleted computers !', 'DELETE');
     });
   }
 
