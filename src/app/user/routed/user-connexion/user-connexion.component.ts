@@ -3,6 +3,8 @@ import { UserService } from '../../shared/user.service';
 import { HeaderHttpService } from '../../../shared/service/header-http.service';
 import { User } from 'src/app/shared/model/user.model';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
+
 
 @Component({
   selector: 'app-user-connexion',
@@ -13,7 +15,12 @@ export class UserConnexionComponent implements OnInit {
 
   public userInfo = new User();
 
-  constructor(private _userService: UserService, private _headerHttpService: HeaderHttpService, private _router: Router) { }
+  constructor(
+    private _userService: UserService,
+     private _headerHttpService: HeaderHttpService,
+      private _router: Router,
+       public snackBar: MatSnackBar) { }
+
 
   ngOnInit() {
     if (this._headerHttpService.getHeader() != null) {
@@ -26,14 +33,20 @@ export class UserConnexionComponent implements OnInit {
     .subscribe(
       result => {
         this._router.navigate(['/computer']);
-        console.log('successful login : ' + result);
+        this.openSnackBar('Successful login : ' + result, 'LOGIN');
       }
       ,
        error => {
          this._headerHttpService.clearHeader();
-
-         console.log('login error ');
+         this.openSnackBar('Coulnd\'t log-in', 'ERROR');
       });
+
   }
 
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 5000,
+    });
+  }
 }
