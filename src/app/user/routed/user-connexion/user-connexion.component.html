@@ -1,3 +1,16 @@
-<p>
-  user-connexion works!
-</p>
+
+ <form class="login-form">
+    <mat-card class="card" color='primary'>
+    <mat-form-field class="login-full-width">
+      <input matInput placeholder="User" name="name" [(ngModel)]="userInfo.username" >
+    </mat-form-field>
+
+    <mat-form-field class="login-full-width">
+      <input type="password" placeholder="Password" matInput name="password" [(ngModel)]="userInfo.saltedPassword" >
+    </mat-form-field>
+    <button mat-button color="primary" (click)="onSubmit()">Connect</button>
+   </mat-card>
+
+  </form>
+
+

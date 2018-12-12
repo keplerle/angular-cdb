@@ -17,6 +17,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [],
   imports: [
@@ -37,7 +38,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatInputModule,
     MatMenuModule,
     MatToolbarModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCardModule
   ],
   exports: [
     CommonModule,
@@ -57,7 +59,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatInputModule,
     MatMenuModule,
     MatToolbarModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCardModule
   ]
 })
 export class CustomMaterialModule { }

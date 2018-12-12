@@ -14,7 +14,7 @@ const routes: Routes = [
     component: CompanyListComponent
   },
   {
-    path: 'user',
+    path: 'login',
     component: UserConnexionComponent
   }
 ];

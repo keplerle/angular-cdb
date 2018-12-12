@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../shared/user.service';
+import { User } from 'src/app/shared/model/user.model';
 
 @Component({
   selector: 'app-user-connexion',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserConnexionComponent implements OnInit {
 
-  constructor() { }
+  public userInfo = new User();
+
+  constructor(private _userService: UserService) { }
 
   ngOnInit() {
+  }
+
+  public onSubmit() {
+    this._userService.connect(this.userInfo.username, this.userInfo.saltedPassword )
+    .subscribe(
+      result => console.log('successful login : ' + result),
+       error => console.log('login error '));
   }
 
 }
