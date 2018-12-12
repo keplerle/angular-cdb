@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { DialogData } from 'src/app/company/routed/company-create/company-create.component';
 import { Computer } from 'src/app/shared/model/computer.model';
 import { Company } from 'src/app/shared/model/company.model';
 import { CompanyService } from 'src/app/company/shared/company.service';

@@ -1,13 +1,13 @@
 <div class="dialog-box">
-    <h1 mat-dialog-title>Create company</h1>
+    <h1 mat-dialog-title i18n >Create company</h1>
     <div mat-dialog-content>
-      <p>Company Name</p>
+      <p i18n >Company Name</p>
       <mat-form-field>
         <input matInput [(ngModel)]="data.company.name">
       </mat-form-field>
     </div>
     <div mat-dialog-actions>
-      <button mat-button (click)="onNoClick()">Cancel</button>
-      <button mat-button [mat-dialog-close]="data.company" cdkFocusInitial [disabled]="data.company.name == null || data.company.name?.length == 0">OK</button>
+      <button mat-button (click)="onNoClick()" i18n >Cancel</button>
+      <button mat-button [mat-dialog-close]="data.company" cdkFocusInitial [disabled]="data.company.name == null || data.company.name?.length == 0" i18n >OK</button>
     </div>
 </div>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="bae39577448287d51ca95ad84613d3b799873166" datatype="html">
+        <source>Computer Database
+  <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/>
+      <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Computer<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+      <x id="START_TAG_BUTTON_1" ctype="x-button" equiv-text="&lt;button&gt;"/>Company<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+  <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/header/header.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2e057a35dbde5f17243ba8ab85fe4f8283c8afb0" datatype="html">
+        <source>Create computer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-create/computer-create.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cac35aab94c6c21ad7ef5bd7818e2bbc66fe5171" datatype="html">
+        <source>Computer Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-create/computer-create.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2a31da23aa1be2b7b487dcf9e324bc67e39c9c40" datatype="html">
+        <source>Computer Introduced</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-create/computer-create.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="188cf165401b7ad982d10d7a234ab27c65065cc3" datatype="html">
+        <source>Computer Discontinued</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-create/computer-create.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6ef0619a37140118b9e640c6cc36ee4e9fb4372a" datatype="html">
+        <source>Company</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-create/computer-create.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
+        <source>Cancel</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-create/computer-create.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/company/routed/company-create/company-create.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/company/routed/company-edit/company-edit.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="997af7fe151c929a3e016d4545a869570727f4d9" datatype="html">
+        <source>Edit computer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9a4e79642a8d2f1f7cd9de2931c35ee182265ff0" datatype="html">
+        <source>Computer Introduction</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a8211c071088e961cdf703389ee12ec9705952b6" datatype="html">
+        <source>Computer Discontinuation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7e6c975ebea8b5f8b120905ca7acf9f8edf59d8e" datatype="html">
+        <source>OK</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/company/routed/company-create/company-create.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/company/routed/company-edit/company-edit.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="20371277706eedf7fd8a3f51633ca5d801cd4fc2" datatype="html">
+        <source> Name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="de23538881cb7555f1544b5310d03ff0d20c960f" datatype="html">
+        <source> Introduced </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1a566d64d7815930fbbff47e4a6326a8cfa79d1f" datatype="html">
+        <source> Discontinued </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f98b0c7c2cb2a4fa9f8060968b22d4ed7de10029" datatype="html">
+        <source> Company </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="43979be637bfc7fde24f99cd5c99b76870b55bdf" datatype="html">
+        <source>Create company</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/company/routed/company-create/company-create.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="69055fe6f31b8476100665df2d6748923c50b422" datatype="html">
+        <source>Company Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/company/routed/company-create/company-create.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/company/routed/company-edit/company-edit.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8aa771976e24e42ec23e2a545e89e08aa951cd57" datatype="html">
+        <source>Edit company</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/company/routed/company-edit/company-edit.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8690dfb1afaaeee1f9481a239de7801043f21c3b" datatype="html">
+        <source> Company Name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/company/routed/company-list/company-list.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="da6aa9950c74cadd85a3bf26272f34f28d8338c8" datatype="html">
+        <source>Connect</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/routed/user-connexion/user-connexion.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

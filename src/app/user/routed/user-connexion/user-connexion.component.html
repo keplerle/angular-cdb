@@ -2,13 +2,13 @@
  <form class="login-form">
     <mat-card class="card" color='primary'>
     <mat-form-field class="login-full-width">
-      <input matInput placeholder="User" name="name" [(ngModel)]="userInfo.username" >
+      <input matInput i18n placeholder="User" [(ngModel)]="userInfo.username" >
     </mat-form-field>
 
     <mat-form-field class="login-full-width">
-      <input type="password" placeholder="Password" matInput name="password" [(ngModel)]="userInfo.saltedPassword" >
+      <input type="password" i18n placeholder="Password" matInput [(ngModel)]="userInfo.saltedPassword" >
     </mat-form-field>
-    <button mat-button color="primary" (click)="onSubmit()">Connect</button>
+    <button mat-button color="primary" (click)="onSubmit()" i18n >Connect</button>
    </mat-card>
 
   </form>
