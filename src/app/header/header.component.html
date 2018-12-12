@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">Computer Database
-  <div class="button-group">
+  <div class="button-group" *ngIf="!disableButton()">
       <button mat-raised-button color="accent"  routerLink="/computer">Computer</button>
       <button mat-raised-button color="accent"  routerLink="/company">Company</button>
   </div>
