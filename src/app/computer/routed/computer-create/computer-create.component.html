@@ -7,19 +7,19 @@
     </mat-form-field>
     <p i18n >Computer Introduced</p>
     <mat-form-field>
-      <input matInput [matDatepicker]="introducedPicker" placeholder="Choose a introduced date" [(ngModel)]="data.computer.introduced">
+      <input matInput [matDatepicker]="introducedPicker" i18n-placeholder placeholder="Choose a introduced date" [(ngModel)]="data.computer.introduced">
       <mat-datepicker-toggle matSuffix [for]="introducedPicker"></mat-datepicker-toggle>
       <mat-datepicker #introducedPicker></mat-datepicker>
     </mat-form-field>
     <p i18n >Computer Discontinued</p>
     <mat-form-field>
-      <input matInput [matDatepicker]="discontinuedPicker" placeholder="Choose a discontinued date" [(ngModel)]="data.computer.discontinued">
+      <input matInput [matDatepicker]="discontinuedPicker" i18n-placeholder placeholder="Choose a discontinued date" [(ngModel)]="data.computer.discontinued">
       <mat-datepicker-toggle matSuffix [for]="discontinuedPicker"></mat-datepicker-toggle>
       <mat-datepicker #discontinuedPicker></mat-datepicker>
     </mat-form-field>
     <p i18n >Company</p>
     <mat-form-field>
-        <mat-select placeholder="Choose your company" [(ngModel)]="data.computer.companyId">
+        <mat-select placeholder="Choose your company" i18n-placeholder [(ngModel)]="data.computer.companyId">
           <mat-option *ngFor="let company of companyList" [value]="company.id">
             {{company.name}}
           </mat-option>

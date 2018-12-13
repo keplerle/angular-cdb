@@ -18,7 +18,7 @@
 
       <p i18n >Company</p>
       <mat-form-field>
-          <mat-select placeholder="No Company" [(ngModel)]="updatedComputer.companyId">
+          <mat-select placeholder="No Company" i18n-placeholder [(ngModel)]="updatedComputer.companyId">
             <mat-option *ngFor="let company of companies" [value]="company.id"  >
               {{company.name}}
             </mat-option>

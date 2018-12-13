@@ -18,7 +18,7 @@
                           [indeterminate]="selection.hasValue() && !isAllSelected()"
                           *ngIf="deleteFlag">
             </mat-checkbox>
-              <button mat-raised-button (click)="deleteCompanies()" matTooltip="Confirm deletion" class="custom-button" color="accent" *ngIf="deleteFlag">
+              <button mat-raised-button (click)="deleteCompanies()" i18n-matTooltip matTooltip="Confirm deletion" class="custom-button" color="accent" *ngIf="deleteFlag">
                 <mat-icon svgIcon="delete-forever"></mat-icon>
               </button>
           </th>
