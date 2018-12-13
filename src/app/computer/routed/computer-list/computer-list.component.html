@@ -4,8 +4,8 @@
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search for Computer">
         </mat-form-field>
         <div class="create-button">
-            <button mat-raised-button color="primary" matTooltip="Create" (click)="createDialog()"><mat-icon svgIcon="add"></mat-icon></button>
-            <button mat-raised-button color="accent" class="custom-button" (click)="deleteFlag=!deleteFlag">
+            <button mat-raised-button color="primary" matTooltip="Create" (click)="createDialog()" [disabled]="disableButton()"><mat-icon svgIcon="add"></mat-icon></button>
+            <button mat-raised-button color="accent" class="custom-button" (click)="deleteFlag=!deleteFlag" [disabled]="disableButton()">
               <mat-icon svgIcon="delete" matTooltip="Delete Mode" *ngIf="!deleteFlag"></mat-icon>
               <mat-icon svgIcon="edit"   matTooltip="Edit Mode" *ngIf="deleteFlag"></mat-icon>
             </button>
@@ -17,22 +17,22 @@
 
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element" (click)="updateDialog(element)" > {{element.name}} </td>
+      <td mat-cell *matCellDef="let element"  (click)="deleteFlag || disableButton() ? null :updateDialog(element)"> {{element.name}} </td>
     </ng-container>
 
     <ng-container matColumnDef="introduced">
       <th mat-header-cell *matHeaderCellDef> Introduced </th>
-      <td mat-cell *matCellDef="let element"> {{element.introduced}} </td>
+      <td mat-cell *matCellDef="let element" (click)="deleteFlag || disableButton() ? null :updateDialog(element)"> {{element.introduced}} </td>
     </ng-container>
 
     <ng-container matColumnDef="discontinued">
       <th mat-header-cell *matHeaderCellDef> Discontinued </th>
-      <td mat-cell *matCellDef="let element"> {{element.discontinued}} </td>
+      <td mat-cell *matCellDef="let element" (click)="deleteFlag || disableButton() ? null :updateDialog(element)"> {{element.discontinued}} </td>
     </ng-container>
 
     <ng-container matColumnDef="company">
       <th mat-header-cell *matHeaderCellDef> Company </th>
-      <td mat-cell *matCellDef="let element"> {{element.companyName}} </td>
+      <td mat-cell *matCellDef="let element" (click)="deleteFlag || disableButton() ? null :updateDialog(element)"> {{element.companyName}} </td>
     </ng-container>
 
     <ng-container matColumnDef="select">

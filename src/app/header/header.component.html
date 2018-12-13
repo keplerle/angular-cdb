@@ -1,7 +1,8 @@
 <mat-toolbar color="primary">Computer Database
   <div class="button-group" *ngIf="!disableButton()">
-      <button mat-raised-button color="accent"  routerLink="/computer">Computer</button>
-      <button mat-raised-button color="accent"  routerLink="/company">Company</button>
+      <button mat-raised-button color="accent" matTooltip="Switch to computer" routerLink="/computer">Computer</button>
+      <button mat-raised-button color="accent" matTooltip="Switch to company" routerLink="/company">Company</button>
+      <button mat-raised-button matTooltip="Logout" (click)='logout()'><mat-icon svgIcon="logout"></mat-icon></button>
   </div>
 
 </mat-toolbar>

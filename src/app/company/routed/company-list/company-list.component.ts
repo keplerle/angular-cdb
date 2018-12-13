@@ -8,6 +8,8 @@ import {SelectionModel} from '@angular/cdk/collections';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
 import {MatSnackBar} from '@angular/material';
+import { Router } from '@angular/router';
+import { HeaderHttpService } from 'src/app/shared/service/header-http.service';
 
 @Component({
   selector: 'app-company-list',
@@ -21,7 +23,10 @@ export class CompanyListComponent implements OnInit {
   selection = new SelectionModel<Company>(true, []);
   arrayIds: string[];
   company: Company = new Company();
-  constructor( public snackBar: MatSnackBar,
+  constructor(
+    private _headerHttpService: HeaderHttpService,
+    public snackBar: MatSnackBar,
+    private _router: Router,
      private _companyService: CompanyService,
       public dialog: MatDialog,
        iconRegistry: MatIconRegistry,
@@ -42,8 +47,19 @@ export class CompanyListComponent implements OnInit {
             sanitizer.bypassSecurityTrustResourceUrl('assets/baseline-delete_forever-24px.svg'));
      }
   ngOnInit() {
-   this.getAllCompanies();
+    if (localStorage.getItem('tokenCDB') == null) {
+      this._router.navigate(['/login']);
+    } else {
+      this._headerHttpService.setHeaderByToken(localStorage.getItem('tokenCDB'));
+      this.getAllCompanies();
+
+    }
   }
+
+  disableButton(): boolean {
+    return (localStorage.getItem('roleCDB') === 'ROLE_USER' );
+  }
+
   isAllSelected() {
     const numSelected = this.selection.selected.length;
     const numRows = this.dataSource.length;

@@ -23,7 +23,8 @@ export class UserConnexionComponent implements OnInit {
 
 
   ngOnInit() {
-    if (this._headerHttpService.getHeader() != null) {
+    if (localStorage.getItem('tokenCDB') != null) {
+      this._headerHttpService.setHeaderByToken(localStorage.getItem('tokenCDB'));
       this._router.navigate(['/computer']);
     }
   }
@@ -32,8 +33,10 @@ export class UserConnexionComponent implements OnInit {
     this._userService.connect(this.userInfo.username, this.userInfo.saltedPassword )
     .subscribe(
       result => {
+        console.log(result.authorities[0].authority);
+        localStorage.setItem('roleCDB', result.authorities[0].authority);
         this._router.navigate(['/computer']);
-        this.openSnackBar('Successful login : ' + result, 'LOGIN');
+        this.openSnackBar('Successful login ! ', 'LOGIN');
       }
       ,
        error => {
