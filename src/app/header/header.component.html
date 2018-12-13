@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <mat-toolbar color="primary">
     <h2>Computer Database</h2>
     <div>
@@ -19,4 +20,13 @@
         </button>
       </mat-menu>
     </div>
+=======
+<mat-toolbar color="primary" i18n >Computer Database
+  <div class="button-group" *ngIf="!disableButton()">
+      <button mat-raised-button color="accent" matTooltip="Switch to computer" i18n-matTooltip routerLink="/computer" i18n >Computer</button>
+      <button mat-raised-button color="accent" matTooltip="Switch to company" i18n-matTooltip routerLink="/company" i18n >Company</button>
+      <button mat-raised-button matTooltip="Logout" (click)='logout()'><mat-icon svgIcon="logout"></mat-icon></button>
+  </div>
+
+>>>>>>> dev
 </mat-toolbar>
