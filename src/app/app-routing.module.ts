@@ -5,6 +5,9 @@ import { CompanyListComponent } from './company/routed/company-list/company-list
 import { UserConnexionComponent } from './user/routed/user-connexion/user-connexion.component';
 
 const routes: Routes = [
+
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
+
   {
     path: 'computer',
     component: ComputerListComponent

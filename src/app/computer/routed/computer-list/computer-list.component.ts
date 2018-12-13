@@ -9,6 +9,8 @@ import { ComputerEditComponent } from '../computer-edit/computer-edit.component'
 import { DatePipe } from '@angular/common';
 import {MatSnackBar} from '@angular/material';
 import { SelectionModel } from '@angular/cdk/collections';
+import { Router } from '@angular/router';
+import { HeaderHttpService } from 'src/app/shared/service/header-http.service';
 
 @Component({
   selector: 'app-computer-list',
@@ -31,6 +33,8 @@ export class ComputerListComponent implements OnInit {
 
   computer: Computer;
   constructor(
+    private _headerHttpService: HeaderHttpService,
+    private _router: Router,
     public snackBar: MatSnackBar,
     private datePipe: DatePipe,
      private _computerService: ComputerService,
@@ -54,8 +58,18 @@ export class ComputerListComponent implements OnInit {
    }
 
   ngOnInit() {
+    if (localStorage.getItem('tokenCDB') == null) {
+      this._router.navigate(['/login']);
+    } else {
+      this._headerHttpService.setHeaderByToken(localStorage.getItem('tokenCDB'));
     this.getPageNoSearch(this.pageIndex + 1, this.pageSize);
+    }
   }
+
+  disableButton(): boolean {
+    return (localStorage.getItem('roleCDB') === 'ROLE_USER' );
+  }
+
   isAllSelected() {
     const numSelected = this.selection.selected.length;
     const numRows = this.dataSource.length;
