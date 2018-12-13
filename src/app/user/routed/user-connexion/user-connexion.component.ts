@@ -5,7 +5,6 @@ import { User } from 'src/app/shared/model/user.model';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 
-
 @Component({
   selector: 'app-user-connexion',
   templateUrl: './user-connexion.component.html',
