@@ -1,5 +1,9 @@
 .custom-modal{
   display: flex;
   flex-direction: column;
+  width: fit-content;
+}
 
+.dialog-box{
+  width: 360px;
 }

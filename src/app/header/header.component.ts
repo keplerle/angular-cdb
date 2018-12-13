@@ -16,6 +16,12 @@ export class HeaderComponent implements OnInit {
       iconRegistry.addSvgIcon(
         'logout',
         sanitizer.bypassSecurityTrustResourceUrl('assets/baseline-exit_to_app-24px.svg'));
+        iconRegistry.addSvgIcon(
+          'computer',
+          sanitizer.bypassSecurityTrustResourceUrl('assets/baseline-computer-24px.svg'));
+          iconRegistry.addSvgIcon(
+            'company',
+            sanitizer.bypassSecurityTrustResourceUrl('assets/baseline-domain-48px.svg'));
      }
 
   ngOnInit() {

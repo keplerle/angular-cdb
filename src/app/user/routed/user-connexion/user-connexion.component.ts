@@ -33,7 +33,6 @@ export class UserConnexionComponent implements OnInit {
     this._userService.connect(this.userInfo.username, this.userInfo.saltedPassword )
     .subscribe(
       result => {
-        console.log(result.authorities[0].authority);
         localStorage.setItem('roleCDB', result.authorities[0].authority);
         this._router.navigate(['/computer']);
         this.openSnackBar('Successful login ! ', 'LOGIN');

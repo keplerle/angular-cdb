@@ -1,8 +1,22 @@
-<mat-toolbar color="primary">Computer Database
-  <div class="button-group" *ngIf="!disableButton()">
-      <button mat-raised-button color="accent" matTooltip="Switch to computer" routerLink="/computer">Computer</button>
-      <button mat-raised-button color="accent" matTooltip="Switch to company" routerLink="/company">Company</button>
-      <button mat-raised-button matTooltip="Logout" (click)='logout()'><mat-icon svgIcon="logout"></mat-icon></button>
-  </div>
-
+<mat-toolbar color="primary">
+    <h2>Computer Database</h2>
+    <div>
+    <button class="menu-button" mat-icon-button [matMenuTriggerFor]="menu" *ngIf="!disableButton()">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/computer">
+            <mat-icon svgIcon="computer"></mat-icon>
+          <span>Computer</span>
+        </button>
+        <button mat-menu-item routerLink="/company">
+            <mat-icon svgIcon="company"></mat-icon>
+          <span>Company</span>
+        </button>
+        <button mat-menu-item (click)='logout()'>
+            <mat-icon svgIcon="logout"></mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </div>
 </mat-toolbar>

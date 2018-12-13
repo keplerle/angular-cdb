@@ -1,5 +1,5 @@
 <div class="mat-elevation-z8">
-  <div>
+  <div class="custom-controle">
       <mat-form-field>
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search for Computer">
         </mat-form-field>
@@ -10,6 +10,7 @@
               <mat-icon svgIcon="edit"   matTooltip="Edit Mode" *ngIf="deleteFlag"></mat-icon>
             </button>
         </div>
+
   </div>
 
 
