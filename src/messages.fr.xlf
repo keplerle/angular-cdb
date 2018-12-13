@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" datatype="plaintext" original="ng2.template">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="bae39577448287d51ca95ad84613d3b799873166" datatype="html">
         <source>Computer Database
@@ -10,6 +10,14 @@
   <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
 
 </source>
+<target>
+Base de Données d'Ordinateurs
+  <x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div&gt;"/>
+      <x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Ordinateur<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+      <x id="START_TAG_BUTTON_1" ctype="x-button" equiv-text="&lt;button&gt;"/>Companie<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+  <x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/>
+
+</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/header/header.component.html</context>
           <context context-type="linenumber">1</context>

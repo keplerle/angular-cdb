@@ -33,6 +33,17 @@
             "scripts": []
           },
           "configurations": {
+
+            "fr": {
+              "aot": true,
+              "outputPath": "dist/my-project-fr/",
+              "i18nFile": "src/messages.fr.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "fr",
+              "i18nMissingTranslation": "error"
+            },
+
+
             "production": {
               "fileReplacements": [
                 {
@@ -67,7 +78,11 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-cdb:build:production"
+            },
+            "fr": {
+              "browserTarget": "angular-cdb:build:fr"
             }
+
           }
         },
         "extract-i18n": {

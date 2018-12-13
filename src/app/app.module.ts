@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +10,12 @@ import { ComputerModule } from './computer/computer.module';
 import { UserModule } from './user/user.module';
 import { CompanyModule } from './company/company.module';
 import { HttpClientModule } from '@angular/common/http';
-import {DatePipe} from '@angular/common';
+import {DatePipe, registerLocaleData} from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import localeFrExtra from '@angular/common/locales/extra/fr';
+
+registerLocaleData(localeFr, 'fr');
+registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
 
 @NgModule({
   declarations: [
@@ -28,7 +33,9 @@ import {DatePipe} from '@angular/common';
     UserModule
 
   ],
-  providers: [DatePipe],
+  providers: [ { provide: LOCALE_ID, useValue: 'fr' }, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
