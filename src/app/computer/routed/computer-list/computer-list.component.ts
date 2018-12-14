@@ -30,6 +30,7 @@ export class ComputerListComponent implements OnInit {
   pageSize = 10;
   arrayIds: string[];
   selection = new SelectionModel<Computer>(true, []);
+  mobile = false;
 
   computer: Computer;
   constructor(
@@ -40,7 +41,7 @@ export class ComputerListComponent implements OnInit {
      private _computerService: ComputerService,
       public dialog: MatDialog,
        iconRegistry: MatIconRegistry,
-        sanitizer: DomSanitizer) {
+        sanitizer: DomSanitizer ) {
     this.displayedColumns = ['name', 'introduced', 'discontinued', 'company', 'select'];
     this.deleteFlag = false;
     iconRegistry.addSvgIcon(
@@ -58,6 +59,7 @@ export class ComputerListComponent implements OnInit {
    }
 
   ngOnInit() {
+
     if (localStorage.getItem('tokenCDB') == null) {
       this._router.navigate(['/login']);
     } else {
