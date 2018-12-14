@@ -9,6 +9,7 @@ import { HeaderHttpService } from 'src/app/shared/service/header-http.service';
 export class UserService {
 
   private SERVER_URL = 'http://10.0.1.148:8080/computer-database/api/user/connect';
+  private SERVER_TEST_URL = 'http://localhost:8080/computer-database/api/user/connect';
   private headers: HttpHeaders;
   constructor(private _httpClient: HttpClient, private _headerHttpService: HeaderHttpService) {
 
@@ -16,7 +17,7 @@ export class UserService {
 
   public connect(username: string, password: string): Observable<any> {
     this._headerHttpService.setHeader(username, password);
-    return this._httpClient.get<any>(this.SERVER_URL, {headers: this._headerHttpService.getHeader()} );
+    return this._httpClient.get<any>(this.SERVER_TEST_URL, {headers: this._headerHttpService.getHeader()} );
   }
 
 }
