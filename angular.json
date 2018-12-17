@@ -18,6 +18,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/angular-cdb",
+            "baseHref": "/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -33,11 +34,11 @@
             "scripts": []
           },
           "configurations": {
-
             "fr": {
               "aot": true,
-              "outputPath": "dist/my-project-fr/",
+              "outputPath": "dist/angular-cdb-fr/",
               "i18nFile": "src/messages.fr.xlf",
+              "baseHref": "/fr/",
               "i18nFormat": "xlf",
               "i18nLocale": "fr",
               "i18nMissingTranslation": "error"
