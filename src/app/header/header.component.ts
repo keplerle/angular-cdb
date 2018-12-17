@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { HeaderHttpService } from '../shared/service/header-http.service';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
-import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-header',
@@ -11,9 +10,9 @@ import { DeviceDetectorService } from 'ngx-device-detector';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  isMobile = false;
+
   constructor(private _router: Router,  private _headerHttpService: HeaderHttpService, iconRegistry: MatIconRegistry,
-    sanitizer: DomSanitizer, private deviceService: DeviceDetectorService ) {
+    sanitizer: DomSanitizer) {
       iconRegistry.addSvgIcon(
         'logout',
         sanitizer.bypassSecurityTrustResourceUrl('assets/baseline-exit_to_app-24px.svg'));
@@ -26,9 +25,6 @@ export class HeaderComponent implements OnInit {
      }
 
   ngOnInit() {
-    if (this.deviceService.isMobile() || this.deviceService.isTablet()) {
-      this.isMobile = true;
-    }
   }
 
   disableButton(): boolean {
@@ -38,5 +34,15 @@ export class HeaderComponent implements OnInit {
   logout() {
     this._headerHttpService.clearHeader();
     this._router.navigate(['/login']);
+  }
+
+  setSubtitle() {
+    if (this._router.url.includes('/computer')) {
+      return 'Computer';
+    } else if (this._router.url.includes('/company')) {
+      return 'Company';
+    } else {
+      return 'Login';
+    }
   }
 }

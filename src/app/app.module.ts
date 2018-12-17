@@ -13,7 +13,6 @@ import { HttpClientModule } from '@angular/common/http';
 import {DatePipe, registerLocaleData} from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import localeFrExtra from '@angular/common/locales/extra/fr';
-import { DeviceDetectorModule } from 'ngx-device-detector';
 
 registerLocaleData(localeFr, 'fr');
 registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
@@ -31,8 +30,7 @@ registerLocaleData(localeFr, 'fr-FR', localeFrExtra);
     HttpClientModule,
     ComputerModule,
     CompanyModule,
-    UserModule,
-    DeviceDetectorModule.forRoot()
+    UserModule
 
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'fr' }, DatePipe ],

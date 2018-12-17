@@ -2,11 +2,12 @@ mat-toolbar{
   display: flex;
   justify-content: space-between;
 }
-.menu-button{
-}
-
 .button-group{
   display: flex;
   justify-content: space-between;
   width: 300px;
+}
+
+.title{
+  display: flex;
 }
