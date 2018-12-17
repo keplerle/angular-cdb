@@ -1,12 +1,14 @@
 <mat-toolbar color="primary">
-    <h2 i18n>Computer Database</h2>
-    <div class="button-group" *ngIf="!isMobile">
-        <button mat-raised-button color="accent" matTooltip="Switch to computer" routerLink="/computer">Computer</button>
-        <button mat-raised-button color="accent" matTooltip="Switch to company" routerLink="/company">Company</button>
-        <button mat-raised-button matTooltip="Logout" (click)='logout()'><mat-icon svgIcon="logout"></mat-icon></button>
-      </div>
-    <div *ngIf="isMobile">
-    <button class="menu-button" mat-icon-button [matMenuTriggerFor]="menu" *ngIf="!disableButton()">
+    <div class='title'>
+        <h2 i18n>Computer Database</h2>
+        <h2> - </h2>
+        <h2 *ngIf='setSubtitle()=="Login"'>Login</h2>
+        <h2 *ngIf='setSubtitle()=="Computer"'>Computer</h2>
+        <h2 *ngIf='setSubtitle()=="Company"'>Company</h2>
+    </div>
+
+    <div>
+    <button  mat-icon-button [matMenuTriggerFor]="menu" *ngIf="!disableButton()">
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
@@ -24,5 +26,4 @@
         </button>
       </mat-menu>
     </div>
-
 </mat-toolbar>
