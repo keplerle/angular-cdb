@@ -30,3 +30,11 @@ table {
     justify-content: space-between
    }
 
+.admin-right:hover{
+  cursor: pointer;
+  background-color:rgba(209, 202, 202, 0.829);
+}
+
+.user-right:hover{
+  cursor: text;
+}
