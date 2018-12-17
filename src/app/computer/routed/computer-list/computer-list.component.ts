@@ -30,7 +30,6 @@ export class ComputerListComponent implements OnInit {
   pageSize = 10;
   arrayIds: string[];
   selection = new SelectionModel<Computer>(true, []);
-
   computer: Computer;
   constructor(
     private _headerHttpService: HeaderHttpService,
