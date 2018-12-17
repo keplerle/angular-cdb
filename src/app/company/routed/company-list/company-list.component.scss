@@ -26,3 +26,12 @@ width: 88%
 .custom-cell-select{
   width: 12%
 }
+
+.admin-right:hover{
+  cursor: pointer;
+  background-color:rgba(209, 202, 202, 0.829);
+}
+
+.user-right:hover{
+  cursor: text;
+}
