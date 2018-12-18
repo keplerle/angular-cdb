@@ -5,7 +5,7 @@
           <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search for Computer" i18n-placeholder>
         </mat-form-field>
         <div class="create-button">
-            <button mat-raised-button color="primary" matTooltip="Create" (click)="createDialog()" [disabled]="disableButton()"><mat-icon svgIcon="add"></mat-icon></button>
+            <button mat-raised-button color="primary" matTooltip="Create" i18n-matTooltip (click)="createDialog()" [disabled]="disableButton()"><mat-icon svgIcon="add"></mat-icon></button>
             <button mat-raised-button color="accent" class="custom-button" (click)="deleteFlag=!deleteFlag" [disabled]="disableButton()">
               <mat-icon svgIcon="delete" i18n-matTooltip matTooltip="Delete Mode" *ngIf="!deleteFlag"></mat-icon>
               <mat-icon svgIcon="edit"   i18n-matTooltip matTooltip="Edit Mode" *ngIf="deleteFlag"></mat-icon>

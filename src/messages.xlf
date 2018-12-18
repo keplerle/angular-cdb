@@ -210,11 +210,26 @@
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="70a67e04629f6d412db0a12d51820b480788d795" datatype="html">
+        <source>Create</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/company/routed/company-list/company-list.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="c83c2a2bc39f98910124ef9f45d0f8792c5b1772" datatype="html">
         <source>Delete Mode</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
           <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/company/routed/company-list/company-list.component.html</context>
+          <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8c375764db42f5d736fb56d01b8052c006ccc8e2" datatype="html">
@@ -222,6 +237,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
           <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/company/routed/company-list/company-list.component.html</context>
+          <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
@@ -271,13 +290,6 @@
         <source>Edit company</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/company/routed/company-edit/company-edit.component.html</context>
-          <context context-type="linenumber">2</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="70a67e04629f6d412db0a12d51820b480788d795" datatype="html">
-        <source>Create</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/company/routed/company-list/company-list.component.html</context>
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>

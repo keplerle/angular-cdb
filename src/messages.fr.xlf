@@ -68,7 +68,7 @@
       </trans-unit>
       <trans-unit id="d8085c8223532bad379e6c17e87e8547cfd8ff25" datatype="html">
         <source>Switch to company</source>
-        <target>Aller vers constructeur</target>
+        <target>ALler vers constructeur</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/header/header.component.html</context>
           <context context-type="linenumber">18</context>
@@ -92,7 +92,7 @@
       </trans-unit>
       <trans-unit id="97f8bfce099d38066cd6759402b761bdf959e96d" datatype="html">
         <source>Dates are incoherent.</source>
-        <target>Les dates sont incohérentes.</target>
+        <target>Les dates sont incohérentes</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-create/computer-create.component.html</context>
           <context context-type="linenumber">3</context>
@@ -224,18 +224,34 @@
       </trans-unit>
       <trans-unit id="8a2fc834a1d4a893852c810d6dc4869b72d36c87" datatype="html">
         <source>Search for Computer</source>
-        <target>Cherchez un Ordinateur</target>
+        <target>Chercher un Ordinateur</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="70a67e04629f6d412db0a12d51820b480788d795" datatype="html">
+        <source>Create</source>
+        <target>Créer</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/company/routed/company-list/company-list.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="c83c2a2bc39f98910124ef9f45d0f8792c5b1772" datatype="html">
         <source>Delete Mode</source>
-        <target>Mode Supression</target>
+        <target>Mode Suppression</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
           <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/company/routed/company-list/company-list.component.html</context>
+          <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8c375764db42f5d736fb56d01b8052c006ccc8e2" datatype="html">
@@ -244,6 +260,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
           <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/company/routed/company-list/company-list.component.html</context>
+          <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
@@ -256,7 +276,7 @@
       </trans-unit>
       <trans-unit id="36b8eeda5787106738be2892cfa5fe2c8048abba" datatype="html">
         <source>Introduced</source>
-        <target>Ajout</target>
+        <target>Ajouté</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
           <context context-type="linenumber">23</context>
@@ -264,7 +284,7 @@
       </trans-unit>
       <trans-unit id="fbea2fe575dda36bd398632759a0cde32124a795" datatype="html">
         <source>Discontinued</source>
-        <target>Retrait</target>
+        <target>Retiré</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
           <context context-type="linenumber">27</context>
@@ -302,17 +322,9 @@
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="70a67e04629f6d412db0a12d51820b480788d795" datatype="html">
-        <source>Create</source>
-        <target>Créer</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/company/routed/company-list/company-list.component.html</context>
-          <context context-type="linenumber">2</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="8caa86dc44cdc315c7633bf686a25cf50ee27f9b" datatype="html">
         <source>Confirm deletion</source>
-        <target>Confirmez supression</target>
+        <target>Confirmez suppression</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/company/routed/company-list/company-list.component.html</context>
           <context context-type="linenumber">21</context>
