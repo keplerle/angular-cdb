@@ -33,4 +33,15 @@ export class ComputerCreateComponent implements OnInit {
       this.companyList = response;
     });
   }
+
+
+  dateValidator(): boolean {
+
+    if (this.data.computer.introduced !== null &&
+     this.data.computer.discontinued !== null &&
+      new Date(this.data.computer.introduced) > new Date(this.data.computer.discontinued) ) {
+      return true;
+    }
+    return false;
+  }
 }

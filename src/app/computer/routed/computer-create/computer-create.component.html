@@ -1,5 +1,6 @@
 <div class="dialog-box">
   <h1 mat-dialog-title i18n >Create computer</h1>
+  <p class="error-message"*ngIf="dateValidator()">Dates are incoherent.</p>
   <div mat-dialog-content class="custom-modal">
     <p i18n >Computer Name</p>
     <mat-form-field>
@@ -7,13 +8,13 @@
     </mat-form-field>
     <p i18n >Computer Introduced</p>
     <mat-form-field>
-      <input matInput [matDatepicker]="introducedPicker" i18n-placeholder placeholder="Choose a introduced date" [(ngModel)]="data.computer.introduced">
+      <input matInput [ngClass]="{'error-message': dateValidator()}" [matDatepicker]="introducedPicker" i18n-placeholder placeholder="Choose a introduced date" [(ngModel)]="data.computer.introduced">
       <mat-datepicker-toggle matSuffix [for]="introducedPicker"></mat-datepicker-toggle>
       <mat-datepicker #introducedPicker></mat-datepicker>
     </mat-form-field>
     <p i18n >Computer Discontinued</p>
     <mat-form-field>
-      <input matInput [matDatepicker]="discontinuedPicker" i18n-placeholder placeholder="Choose a discontinued date" [(ngModel)]="data.computer.discontinued">
+      <input matInput [ngClass]="{'error-message': dateValidator()}" [matDatepicker]="discontinuedPicker" i18n-placeholder placeholder="Choose a discontinued date" [(ngModel)]="data.computer.discontinued">
       <mat-datepicker-toggle matSuffix [for]="discontinuedPicker"></mat-datepicker-toggle>
       <mat-datepicker #discontinuedPicker></mat-datepicker>
     </mat-form-field>
@@ -28,6 +29,6 @@
   </div>
   <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()" i18n >Cancel</button>
-    <button mat-button [mat-dialog-close]="data.computer" cdkFocusInitial [disabled]="data.computer.name == null || data.computer.name?.length == 0">OK</button>
+    <button mat-button [mat-dialog-close]="data.computer" cdkFocusInitial [disabled]="dateValidator() || data.computer.name == null || data.computer.name?.length == 0">OK</button>
   </div>
 </div>

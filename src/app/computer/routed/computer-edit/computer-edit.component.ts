@@ -36,4 +36,14 @@ export class ComputerEditComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  dateValidator(): boolean {
+    if (this.updatedComputer.introduced !== null &&
+      this.updatedComputer.discontinued !== null &&
+       new Date(this.updatedComputer.introduced) > new Date(this.updatedComputer.discontinued) ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }
