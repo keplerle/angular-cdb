@@ -15,10 +15,13 @@ export interface DialogData {
 })
 export class ComputerCreateComponent implements OnInit {
   companyList: Company[];
+  now: Date;
   constructor(
     public dialogRef: MatDialogRef<ComputerCreateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
-    private _companyService: CompanyService) {}
+    private _companyService: CompanyService) {
+      this.now = new Date();
+    }
     ngOnInit() {
      this.getCompanies();
     }

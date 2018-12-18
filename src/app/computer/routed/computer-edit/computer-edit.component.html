@@ -9,16 +9,16 @@
 
       <p i18n >Computer Introduced</p>
       <mat-form-field>
-        <input matInput [ngClass]="{'error-message': dateValidator()}" [matDatepicker]="introducedPicker" i18n-placeholder placeholder="Choose a introduced date" [(ngModel)]="updatedComputer.introduced">
+        <input disabled matInput [max]="now" [ngClass]="{'error-message': dateValidator()}" [matDatepicker]="introducedPicker" i18n-placeholder placeholder="Choose a introduced date" [(ngModel)]="updatedComputer.introduced">
         <mat-datepicker-toggle matSuffix [for]="introducedPicker"></mat-datepicker-toggle>
-        <mat-datepicker #introducedPicker></mat-datepicker>
+        <mat-datepicker #introducedPicker disabled="false"></mat-datepicker>
       </mat-form-field>
 
       <p i18n >Computer Discontinued</p>
       <mat-form-field>
-        <input matInput [ngClass]="{'error-message': dateValidator()}" [matDatepicker]="discontinuedPicker" i18n-placeholder placeholder="Choose a discontinued date" [(ngModel)]="updatedComputer.discontinued">
+        <input disabled matInput [max]="now" [ngClass]="{'error-message': dateValidator()}" [matDatepicker]="discontinuedPicker" i18n-placeholder placeholder="Choose a discontinued date" [(ngModel)]="updatedComputer.discontinued">
         <mat-datepicker-toggle matSuffix [for]="discontinuedPicker"></mat-datepicker-toggle>
-        <mat-datepicker #discontinuedPicker></mat-datepicker>
+        <mat-datepicker #discontinuedPicker disabled="false"></mat-datepicker>
       </mat-form-field>
 
       <p i18n >Company</p>

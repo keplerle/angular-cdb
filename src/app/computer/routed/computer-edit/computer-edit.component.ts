@@ -13,13 +13,14 @@ export interface DialogData {
   styleUrls: ['./computer-edit.component.scss']
 })
 export class ComputerEditComponent implements OnInit {
-
   updatedComputer: Computer = new Computer();
   companies: Company[];
+  now: Date;
   constructor(
     public dialogRef: MatDialogRef<ComputerEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData
     , private _companyService: CompanyService) {
+       this.now = new Date();
        this.updatedComputer.name = data.computer.name ;
        this.updatedComputer.id = data.computer.id ;
        this.updatedComputer.discontinued = data.computer.discontinued ;
