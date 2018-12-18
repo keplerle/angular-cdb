@@ -4,7 +4,7 @@
     <body>
       <trans-unit id="ec9efc946830662837302396a42308e55e45e3af" datatype="html">
         <source>Computer Database</source>
-        <target>Base de Donnée d'Ordinateurs</target>
+        <target>Base de Données d'Ordinateurs</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/header/header.component.html</context>
           <context context-type="linenumber">3</context>
@@ -12,7 +12,7 @@
       </trans-unit>
       <trans-unit id="6765b4c916060f6bc42d9bb69e80377dbcb5e4e9" datatype="html">
         <source>Login</source>
-        <target>Se Connecter</target>
+        <target>Connexion</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/header/header.component.html</context>
           <context context-type="linenumber">5</context>
@@ -36,7 +36,7 @@
       </trans-unit>
       <trans-unit id="6ef0619a37140118b9e640c6cc36ee4e9fb4372a" datatype="html">
         <source>Company</source>
-        <target>Companie</target>
+        <target>Constructeur</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/header/header.component.html</context>
           <context context-type="linenumber">7</context>
@@ -47,15 +47,15 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-create/computer-create.component.html</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">21</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">24</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9b44142c1ba2abd36b1a9c122276f100cfe21f17" datatype="html">
@@ -68,7 +68,7 @@
       </trans-unit>
       <trans-unit id="d8085c8223532bad379e6c17e87e8547cfd8ff25" datatype="html">
         <source>Switch to company</source>
-        <target>Aller vers companie</target>
+        <target>Aller vers constructeur</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/header/header.component.html</context>
           <context context-type="linenumber">18</context>
@@ -76,7 +76,7 @@
       </trans-unit>
       <trans-unit id="bb694b49d408265c91c62799c2b3a7e3151c824d" datatype="html">
         <source>Logout</source>
-        <target>Se Déconnecter</target>
+        <target>Se déconnecter</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/header/header.component.html</context>
           <context context-type="linenumber">24</context>
@@ -90,16 +90,28 @@
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="97f8bfce099d38066cd6759402b761bdf959e96d" datatype="html">
+        <source>Dates are incoherent.</source>
+        <target>Les dates sont incohérentes.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-create/computer-create.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="cac35aab94c6c21ad7ef5bd7818e2bbc66fe5171" datatype="html">
         <source>Computer Name</source>
         <target>Nom Ordinateur</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-create/computer-create.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="linenumber">5</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2a31da23aa1be2b7b487dcf9e324bc67e39c9c40" datatype="html">
@@ -107,7 +119,11 @@
         <target>Ajout Ordinateur</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-create/computer-create.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7f89a6d82d49284066327c40785d7e1af6b8bf09" datatype="html">
@@ -115,7 +131,11 @@
         <target>Choisissez une date d'ajout</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-create/computer-create.component.html</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
+          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="188cf165401b7ad982d10d7a234ab27c65065cc3" datatype="html">
@@ -123,7 +143,11 @@
         <target>Retrait Ordinateur</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-create/computer-create.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
+          <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ddd19a7c4c1ec7fd12061c1a800ba05d0ec390e9" datatype="html">
@@ -131,15 +155,19 @@
         <target>Choisissez une date de retrait</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-create/computer-create.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="986fe944dbe714100c22e40a16e2222833571366" datatype="html">
         <source>Choose your company</source>
-        <target>Choisissez votre companie</target>
+        <target>Choisissez votre constructeur</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-create/computer-create.component.html</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
@@ -147,11 +175,11 @@
         <target>Annuler</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-create/computer-create.component.html</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">31</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">34</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/company/routed/company-create/company-create.component.html</context>
@@ -170,28 +198,12 @@
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="9a4e79642a8d2f1f7cd9de2931c35ee182265ff0" datatype="html">
-        <source>Computer Introduction</source>
-        <target>Ajout de l'Ordinateur</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
-          <context context-type="linenumber">9</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="a8211c071088e961cdf703389ee12ec9705952b6" datatype="html">
-        <source>Computer Discontinuation</source>
-        <target>Retrait de l'Ordinateur</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="1ad8f71bfdb27e8548cd849eaa69a8a385450c02" datatype="html">
         <source>No Company</source>
-        <target>Pas de Companie</target>
+        <target>Pas de Constructeur</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
-          <context context-type="linenumber">21</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7e6c975ebea8b5f8b120905ca7acf9f8edf59d8e" datatype="html">
@@ -199,7 +211,7 @@
         <target>OK</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-edit/computer-edit.component.html</context>
-          <context context-type="linenumber">30</context>
+          <context context-type="linenumber">35</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/company/routed/company-create/company-create.component.html</context>
@@ -220,7 +232,7 @@
       </trans-unit>
       <trans-unit id="c83c2a2bc39f98910124ef9f45d0f8792c5b1772" datatype="html">
         <source>Delete Mode</source>
-        <target>Mode Suppression</target>
+        <target>Mode Supression</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
           <context context-type="linenumber">10</context>
@@ -247,7 +259,7 @@
         <target>Ajout</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="fbea2fe575dda36bd398632759a0cde32124a795" datatype="html">
@@ -255,12 +267,12 @@
         <target>Retrait</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/computer/routed/computer-list/computer-list.component.html</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="43979be637bfc7fde24f99cd5c99b76870b55bdf" datatype="html">
         <source>Create company</source>
-        <target>Créer companie</target>
+        <target>Créer constructeur</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/company/routed/company-create/company-create.component.html</context>
           <context context-type="linenumber">2</context>
@@ -268,7 +280,7 @@
       </trans-unit>
       <trans-unit id="69055fe6f31b8476100665df2d6748923c50b422" datatype="html">
         <source>Company Name</source>
-        <target>Nom Companie</target>
+        <target>Nom Constructeur</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/company/routed/company-create/company-create.component.html</context>
           <context context-type="linenumber">4</context>
@@ -284,7 +296,7 @@
       </trans-unit>
       <trans-unit id="8aa771976e24e42ec23e2a545e89e08aa951cd57" datatype="html">
         <source>Edit company</source>
-        <target>Éditer companie</target>
+        <target>Éditer constructeur</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/company/routed/company-edit/company-edit.component.html</context>
           <context context-type="linenumber">2</context>
@@ -300,7 +312,7 @@
       </trans-unit>
       <trans-unit id="8caa86dc44cdc315c7633bf686a25cf50ee27f9b" datatype="html">
         <source>Confirm deletion</source>
-        <target>Confirmez suppression</target>
+        <target>Confirmez supression</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/company/routed/company-list/company-list.component.html</context>
           <context context-type="linenumber">21</context>
@@ -324,7 +336,7 @@
       </trans-unit>
       <trans-unit id="da6aa9950c74cadd85a3bf26272f34f28d8338c8" datatype="html">
         <source>Connect</source>
-        <target>Connexion</target>
+        <target>Se connecter</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/routed/user-connexion/user-connexion.component.html</context>
           <context context-type="linenumber">12</context>
