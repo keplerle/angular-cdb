@@ -204,7 +204,12 @@ public refresh() {
       this.refresh();
       this.selection.clear();
       this.deleteFlag = false;
-      this.openSnackBar('Successfully deleted computers !', 'DELETE');
+      if (this.arrayIds.length === 0) {
+        this.openSnackBar('Nothing to delete', 'DELETE');
+      } else {
+        this.openSnackBar('Successfully deleted computers', 'DELETE');
+      }
+
     });
   }
 
