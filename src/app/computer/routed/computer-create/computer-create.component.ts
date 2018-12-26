@@ -15,12 +15,18 @@ export interface DialogData {
 })
 export class ComputerCreateComponent implements OnInit {
   companyList: Company[];
-  now: Date;
+  minDate: Date;
+  maxDate: Date;
   constructor(
     public dialogRef: MatDialogRef<ComputerCreateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
     private _companyService: CompanyService) {
-      this.now = new Date();
+      this.minDate = new Date(1970, 0, 2);
+      const d =  new Date();
+      const year = d.getFullYear();
+      const month = d.getMonth();
+      const day = d.getDate();
+      this.maxDate = new Date(year + 20, month, day);
     }
     ngOnInit() {
      this.getCompanies();

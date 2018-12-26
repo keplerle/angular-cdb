@@ -8,8 +8,8 @@ import { HeaderHttpService } from '../../shared/service/header-http.service';
 })
 export class ComputerService {
 
-  private SERVER_URL = 'http://10.0.1.148:8080/computer-database/api/computer';
-  private SERVER_TEST_IP = 'http://localhost:8080/computer-database/api/computer';
+  private SERVER_TEST_IP = 'http://10.0.1.168:8080/computer-database/api/computer';
+  // private SERVER_TEST_IP = 'http://localhost:8080/computer-database/api/computer';
   constructor(private _httpClient: HttpClient, private _headerHttpService: HeaderHttpService) {
    }
 
